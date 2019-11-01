@@ -6,6 +6,7 @@ class ChangeUsers < ActiveRecord::Migration[5.0]
       t.string :img
       t.string :gender
       t.datetime :birthday
+      t.integer :role
     end
   end
 end

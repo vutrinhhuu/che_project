@@ -12,7 +12,7 @@
                                 <div class="col-lg-6 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h3><%= chair.name %></h3>
+                                            <%=   link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible;font-size:30px'}%>
                                             <p><%= chair.description %></p>
                                             <a href="#" class="btn_2">buy now</a>
                                         </div>

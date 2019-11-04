@@ -1,5 +1,6 @@
  <!--================Home Banner Area =================-->
     <!-- breadcrumb start-->
+    <%= javascript_include_tag "js/submit.js" %>
     <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -25,152 +26,59 @@
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <p><span>10000 </span> Prodict Found</p>
+                                    <h3><span style="color:red"><%= @quantity_chair %> </span> chair</h3>
                                 </div>
-                                <div class="single_product_menu d-flex">
-                                    <h5>short by : </h5>
-                                    <select>
-                                        <option data-display="Select">name</option>
-                                        <option value="1">price</option>
-                                        <option value="2">product</option>
-                                    </select>
-                                </div>
-                                <div class="single_product_menu d-flex">
-                                    <h5>show :</h5>
-                                    <div class="top_pageniation">
-                                        <ul>
-                                            <li>1</li>
-                                            <li>2</li>
-                                            <li>3</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single_product_menu d-flex">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="search"
-                                            aria-describedby="inputGroupPrepend">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend"><i
-                                                    class="ti-search"></i></span>
+                                
+                                <%= search_form_for @search, class: "d-flex",   url: chairs_path do |f|%>
+                                   <div class="d-flex"> 
+                                        <div class="d-flex" style="margin-right:100px">
+                                            <h4 style="margin-right:10px">Sort by : </h4>
+                                            <select name="sort_by" id="sort_by">                                         
+                                                <option value="latest_chair">Latest chair</option>
+                                                <option value="price_asc" >Price from low hig to high</option>
+                                                <option value="price_desc">Price from high to low</option>
+                                            </select>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="d-flex" style="margin-right:100px">
+                                            <h4 style="margin-right:10px">Show :</h4>
+                                              <%= select_tag :limit, options_from_collection_for_select(Settings.show_limit, :second, :second, selected: params[:limit] || Settings.show_limit.limit),id: "show-limit"%>
+                                        </div>
+                                        <div class="single_product_menu" style="float:left">
+                                            <div class="input-group" style="width:270px">
+                                                <%= f.search_field :name_cont, class: "form-control", placeholder: "Seach by name" %>
+                                                <div class="input-group-prepend">
+                                                    <button type="button" class="input-group-text" id="search" name="commit" value="search"><i
+                                                            class="ti-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                <% end %>
+                               
                             </div>
                         </div>
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_1.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                        <% @chairs.each_with_index do |chair| %>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="single_product_item">
+                                    <div style="height:300px"><%= image_tag chair.img %></div>
+                                    <div class="single_product_text">
+                                        <%=   link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible;'}%>
+                                        <b style="color:red">$<%= chair.price %></b>
+                                        <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_2.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_3.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_4.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_5.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_6.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_7.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_8.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="img/product/product_2.png" alt="">
-                                <div class="single_product_text">
-                                    <h4>Quartz Belt Watch</h4>
-                                    <h3>$150.00</h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        <% end %>
+                        
                         <div class="col-lg-12">
                             <div class="pageination">
                                 <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <i class="ti-angle-double-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <i class="ti-angle-double-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="pagination justify-content-center">
+                                        <%= paginate @chairs, theme: 'twitter-bootstrap-3' %>
+                                    </div>
                                 </nav>
                             </div>
                         </div>

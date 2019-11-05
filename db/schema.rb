@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191023075109) do
+ActiveRecord::Schema.define(version: 20191101035153) do
+
+  create_table "chairs", force: :cascade do |t|
+    t.string  "name"
+    t.string  "function"
+    t.string  "img"
+    t.string  "description"
+    t.integer "price"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer "chair_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -20,8 +33,20 @@ ActiveRecord::Schema.define(version: 20191023075109) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "img"
+    t.string   "gender"
+    t.datetime "birthday"
+    t.integer  "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "valuations", force: :cascade do |t|
+    t.integer "chair_id"
+    t.integer "user_id"
+    t.string  "content"
   end
 
 end

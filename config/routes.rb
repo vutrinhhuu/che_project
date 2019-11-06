@@ -6,4 +6,7 @@ Rails.application.routes.draw do
  
   #get chairs
   resources :chairs
+  
+  #resources users
+  resources :users,  only: [:index, :edit, :update]
 end

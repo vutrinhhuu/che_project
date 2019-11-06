@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
     # @user = find_user
     if @user.update_attributes user_params
       flash[:success] = t("profile_updated")
-      redirect_to @user
+      redirect_to :back
     else
       render :edit
     end

@@ -15,11 +15,13 @@ class ChairsController < ApplicationController
             @chairs = @search.result.page(params[:page]).per params[:limit]
         end
         @quantity_chair = @search.result.count
+        @order_item = current_order.order_items.new
     end
-    
+
     def show
         @chair =  Chair.find params[:id]
         @list_other_chair = Chair.where("id!=?",params[:id]).limit(4).order(id: :desc)
         @url_current = request.original_url
+        @order_item = current_order.order_items.new
     end
 end

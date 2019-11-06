@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get 'admin/dashboard'
 
   root "static_pages#home"
+
+  namespace :admin do
+    resources :users
+  end
 end

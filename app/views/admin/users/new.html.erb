@@ -11,6 +11,14 @@
     </section>
     <br>
     <section class="content">
+        <% if @user.errors.full_messages.any? %>
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <% @user.errors.full_messages.each do |error_message| %>
+                  <strong><%= error_message if @user.errors.full_messages.first == error_message %></strong> <br />
+                <% end %>
+        </div>
+        <% end %>
         <% flash.each do |key, value| %>
             <div id="error_explanation">
               <div class="alert alert-#{key}">

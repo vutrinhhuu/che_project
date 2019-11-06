@@ -6,4 +6,8 @@ Rails.application.routes.draw do
  
   #get chairs
   resources :chairs
+  
+  namespace :admin do
+    resources :users
+  end
 end

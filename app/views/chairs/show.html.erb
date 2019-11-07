@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>Chair detial</h2>
+              <h2>Chair detail</h2>
               <p>Home <span>-</span> Shop Single</p>
             </div>
           </div>
@@ -42,19 +42,22 @@
           <div class="s_product_text">
             <h3><%= @chair.name %><h3>
             <h2>$<%=@chair.price%></h2>
-    
+
             <p>
               <%= @chair.description %>
             </p>
-            <div class="card_area d-flex justify-content-between align-items-center">
-              <div class="product_count">
-                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="input-number" type="text" value="1" min="0" max="10">
-                <span class="number-increment"> <i class="ti-plus"></i></span>
+            <%= form_for @order_item, remote: true do |f| %>
+              <div class="card_area d-flex justify-content-between align-items-center">
+                <div class="product_count">
+                  <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                  <%= f.text_field :quantity, value: 1, class: "input-number", min: 1 %>
+                  <span class="number-increment"> <i class="ti-plus"></i></span>
+                </div>
+                <%= f.hidden_field :chair_id, value: @chair.id %>
+                <%= f.submit "Add to Cart", class: "btn_3" %>
+                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
               </div>
-              <a href="#" class="btn_3">add to cart</a>
-              <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -72,7 +75,7 @@
   </section>
   <!--================comment===============-->
 
-    
+
   <!-- product_list other start-->
   <section class="product_list best_seller">
     <div class="container">

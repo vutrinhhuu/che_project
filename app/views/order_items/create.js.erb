@@ -1,0 +1,6 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+  <% binding.pry %>
+  alert("not valid.")
+<% else %>
+  $(".cart_quantity").replaceWith("<%= escape_javascript(render 'layouts/cart_quantity') %>")
+<% end %>

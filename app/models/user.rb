@@ -13,9 +13,17 @@ class User < ApplicationRecord
   # validates :birthday, format: { with: VALID_DATE_REGEX}
   validates :gender, inclusion: {in: ["male", "female"]}
   validates :role, inclusion: {in: ["user", "admin"]}
+
+  # validates :nickname,  presence: true, length: {maximum: 30}
+  
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= :user
+  end
+
+  private
+  def downcase_email
+    self.email = email.downcase
   end
 end

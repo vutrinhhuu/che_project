@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   
   layout 'admin'
   def index
-    @users = User.all.page(params[:page]).per(2)
+    @users = User.all.page(params[:page]).per(10)
   end
   
   def show
@@ -12,6 +12,7 @@ class Admin::UsersController < ApplicationController
   end
   
   def new
+    @user = User.new
   end
   
   def create
@@ -26,8 +27,6 @@ class Admin::UsersController < ApplicationController
   end
     
   def edit
-    flash[:success] = ""
-    @user = User.find(params[:id])
   end
   
   def update

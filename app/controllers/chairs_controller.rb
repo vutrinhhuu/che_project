@@ -4,8 +4,10 @@ class ChairsController < ApplicationController
         case sort_by
         when "price_asc"
             @search = Chair.all.order(price: :asc).ransack params[:q]
+            @price_asc = true
         when "price_desc"
             @search = Chair.all.order(price: :desc).ransack params[:q]
+            @price_desc = true
         else
             @search = Chair.all.order(id: :desc).ransack params[:q]
         end

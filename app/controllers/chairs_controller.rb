@@ -12,7 +12,7 @@ class ChairsController < ApplicationController
             @search = Chair.all.order(id: :desc).ransack params[:q]
         end
         if !params[:limit]
-            @chairs = @search.result.page(params[:page]).per 10
+            @chairs = @search.result.page(params[:page]).per 8
         else
             @chairs = @search.result.page(params[:page]).per params[:limit]
         end

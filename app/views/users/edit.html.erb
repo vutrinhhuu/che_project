@@ -37,7 +37,7 @@
                     <label for="user_img"></label>
                   </div>
                   <div class="avatar-preview">
-                      <div id="imagePreview" style="background-image: url(<%=@user.img%>);">
+                      <div id="imagePreview" style="background-image: url(http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg);">
                       </div>
                   </div>
                 </div>
@@ -60,10 +60,6 @@
                     <div class="col-md-12 form-group">
                       <label>Birthday</label>   
                       <%= f.date_field :birthday, class: "form-control"%>   
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label>Email</label>   
-                      <%= f.email_field :email, class: "form-control", placeholder: "Enter email"%>   
                     </div>
                     <div class="col-md-6 form-group col-md-offset-3">
                       <button type="submit" value="submit" class="btn_3">Update profile</button>

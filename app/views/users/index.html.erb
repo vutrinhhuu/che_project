@@ -31,8 +31,8 @@
             <div class="col-lg-6 col-xl-6">
               <div class="product_slider_img">
                 <div id="vertical">
-                  <div data-thumb="img/product/single-product/product_1.png">
-                    <div><%=image_tag current_user.img%></div>
+                  <div>
+                    <div><%= image_tag "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg" %></div>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                 <h3><%= current_user.name %><h3>
                 <h4 class ="css-margin-top-50 "><span class="font-weight">Nick name: </span><%=current_user.nickname%></h4>
                 <h4 class ="css-margin-top-10 "><span class="font-weight">Gender: </span><%=current_user.gender%></h4>
-                <h4 class ="css-margin-top-10 "><span class="font-weight">Birthday: </span><%= current_user.birthday.strftime("%m/%d/%Y") %></h4>
+                <h4 class ="css-margin-top-10 "><span class="font-weight">Birthday: </span><%= current_user.birthday.strftime("%d/%m/%Y") %></h4>
                 <h4 class ="css-margin-top-10 "><span class="font-weight">Email: </span><%= current_user.email %></h4>
                 <div class="card_area d-flex justify-content align-items-center css-margin-top-50">
                   <%= link_to "Edit profile", edit_user_path(current_user.id), method: :get, class: "btn btn-success mr-5 css-width-button" %>

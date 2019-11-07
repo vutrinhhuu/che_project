@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'admin/dashboard'
 
   root "static_pages#home"
+  
+  #resources users
+  resources :users,  only: [:index, :edit, :update]
 
   namespace :admin do
     resources :users

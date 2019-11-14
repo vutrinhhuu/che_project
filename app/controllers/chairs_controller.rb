@@ -1,18 +1,25 @@
 class ChairsController < ApplicationController
     def index
-        sort_by =params[:sort_by]
+        @categories = Category.all
+        if params[:category]
+            @category = @categories.find(params[:category])
+            @chairs = @category.chairs
+        else
+            @chairs = Chair.all
+        end
+        sort_by = params[:sort_by]
         case sort_by
         when "price_asc"
-            @search = Chair.all.order(price: :asc).ransack params[:q]
+            @search = @chairs.order(price: :asc).ransack params[:q]
             @price_asc = true
         when "price_desc"
-            @search = Chair.all.order(price: :desc).ransack params[:q]
+            @search = @chairs.order(price: :desc).ransack params[:q]
             @price_desc = true
         else
-            @search = Chair.all.order(id: :desc).ransack params[:q]
+            @search = @chairs.order(id: :desc).ransack params[:q]
         end
         if !params[:limit]
-            @chairs = @search.result.page(params[:page]).per 8
+            @chairs = @search.result.page(params[:page]).per 9
         else
             @chairs = @search.result.page(params[:page]).per params[:limit]
         end

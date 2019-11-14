@@ -213,13 +213,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= image_tag "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg", class: "user-image" %>
+              <%= image_tag current_user.img? ? current_user.img.url : "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg", class: "user-image" %>
               <span class="hidden-xs"><%= current_user.nickname %></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <%= image_tag "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg", class: "img-circle" %>
+                <%= image_tag current_user.img? ? current_user.img.url : "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg", class: "img-circle" %>
 
                 <p>
                   <%= current_user.nickname %>

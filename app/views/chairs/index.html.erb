@@ -21,30 +21,52 @@
     <section class="cat_product_area section_padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-3">
+                    <div class="left_sidebar_area">
+                        <aside class="left_widgets p_filter_widgets">
+                            <div class="l_w_title">
+                                <h3>Browse Categories</h3>
+                            </div>
+                            <div class="widgets_inner">
+                                <ul class="list">
+                                    <% @categories.each do |category| %>
+                                        <li>
+                                            <%= link_to category.name, chairs_path(category: category.id)  %></a>
+                                            <span>(<%= category.chairs.count %>)</span>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <h3><span style="color:red"><%= @quantity_chair %> </span> chair</h3>
+                                    <p><span style="color:red"><%= @quantity_chair %> </span><%= @quantity_chair == 1 ? "chair" : "chairs" %></p>
                                 </div>
                                 
                                 <%= search_form_for @search, class: "d-flex",   url: chairs_path do |f|%>
                                    <div class="d-flex"> 
-                                        <div class="d-flex" style="margin-right:100px">
-                                            <h4 style="margin-right:10px">Sort by : </h4>
+                                        <% if @category %>
+                                            <%= hidden_field_tag :category, @category.id %>
+                                        <% end %>
+                                        <div class="single_product_menu d-flex" style="margin-right:80px">
+                                            <h5 style="margin-right:10px">Sort by : </h5>
                                             <select name="sort_by" id="sort_by">                                         
                                                 <option value="latest_chair">Latest chair</option>
                                                 <option value="price_asc" <% if @price_asc == true %>selected<% end %> >Price from low to high</option>
                                                 <option value="price_desc" <% if @price_desc == true %>selected<% end %> >Price from high to low</option>
                                             </select>
                                         </div>
-                                        <div class="d-flex" style="margin-right:100px">
-                                            <h4 style="margin-right:10px">Show :</h4>
+                                        <div class="single_product_menu d-flex" style="margin-right:80px">
+                                            <h5 style="margin-right:10px">Show :</h5>
                                               <%= select_tag :limit, options_from_collection_for_select(Settings.show_limit, :second, :second, selected: params[:limit] || Settings.show_limit.limit),id: "show-limit"%>
                                         </div>
                                         <div class="single_product_menu" style="float:left">
-                                            <div class="input-group" style="width:270px">
+                                            <div class="input-group" style="width:200px">
                                                 <%= f.search_field :name_cont, class: "form-control", placeholder: "Seach by name" %>
                                                 <div class="input-group-prepend">
                                                     <button type="button" class="input-group-text" id="search" name="commit" value="search"><i
@@ -61,7 +83,7 @@
 
                     <div class="row align-items-center latest_product_inner">
                         <% @chairs.each_with_index do |chair| %>
-                            <div class="col-lg-3 col-sm-6">
+                            <div class="col-lg-4 col-sm-6">
                                 <div class="single_product_item">
                                     <div style="height:300px"><%= image_tag chair.img %></div>
                                     <div class="single_product_text">

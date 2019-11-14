@@ -1,5 +1,5 @@
-
    <!-- breadcrumb start-->
+
 <section class="breadcrumb breadcrumb_bg">
     <div class="container">
       <div class="row justify-content-center">
@@ -37,7 +37,7 @@
                     <label for="user_img"></label>
                   </div>
                   <div class="avatar-preview">
-                      <div id="imagePreview" style="background-image: url(http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg);">
+                      <div id="imagePreview" style="background-image: url(<%= current_user.img? ? current_user.img.url : "http://file.vforum.vn/hinh/2018/02/hinh-cho-cuoi-deu-cho-de-thuong-12.jpg"%>);">
                       </div>
                   </div>
                 </div>

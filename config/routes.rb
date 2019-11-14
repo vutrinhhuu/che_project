@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :chairs
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]

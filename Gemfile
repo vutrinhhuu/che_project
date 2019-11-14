@@ -55,3 +55,6 @@ gem 'ransack'
 gem 'bootstrap-kaminari-views'
 gem 'config'
 gem 'carrierwave'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'omniauth-facebook', '~> 4.0'
+gem 'dotenv-rails', groups: [:development, :test]

@@ -88,8 +88,12 @@
                                     <div style="height:300px"><%= image_tag chair.img %></div>
                                     <div class="single_product_text">
                                         <%=   link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible;'}%>
-                                        <b style="color:red">$<%= chair.price %></b>
-                                        <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                        <b class="text-danger">$<%= chair.price %></b>
+                                        <% if chair.quantity  == 0 %>
+                                            <h3 align="left" class="text-danger">SOLD OUT</h3>
+                                        <%else%>
+                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                        <%end%>
                                     </div>
                                 </div>
                             </div>

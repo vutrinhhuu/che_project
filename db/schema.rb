@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20191113101222) do
     t.string  "img"
     t.string  "description"
     t.integer "price"
+<<<<<<< HEAD
     t.integer "quantity"
+=======
+>>>>>>> 067ed2db0c3820271711a05c1cb283ef3d7eb9fd
     t.index ["category_id"], name: "index_chairs_on_category_id"
   end
 

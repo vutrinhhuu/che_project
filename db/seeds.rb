@@ -69,7 +69,6 @@ Chair.create!([
 		price: 963.900,
 		quantity: 10
 	},
-
 	{id: 2,
 		name:"Mesh chair GL401",
 		category_id: 1,
@@ -80,7 +79,6 @@ Sponge pads covered with porous mesh fabric, armrest, leather seats.",
 		price: 1288.350,
 		quantity: 20
 	},
-
 	{id: 3,
 		name:"Mesh chair GL403",
 		category_id: 1,
@@ -91,7 +89,6 @@ Sponge pads covered with porous mesh fabric, armrest, leather seats.",
 The armrests use shiny Ni-Cr plated steel create elegance.",
 		price: 1265.250,
 		quantity: 30},
-
 	{id: 4,
 		name:"Mesh chair GL407",
 		category_id: 1,
@@ -105,7 +102,6 @@ Mesh seat cushion is porous.",
 		price: 786.251,
 		quantity: 10
 	},
-
 	{id: 5,
 		name:"Meeting chair GL406",
 		category_id: 1,
@@ -115,7 +111,6 @@ Mesh seat cushion is porous.",
 		price: 1155.000,
 		quantity: 10
 	},
-
 	{id: 6,
 		name:"Mesh chair GL412M",
 		category_id: 1,
@@ -126,7 +121,6 @@ With outstanding advantages: the chair is very smooth and airy, creating a pleas
 		price: 989.573,
 		quantity: 10
 	},
-
 	{id: 7,
 		name:"Cafe chair G31",
 		category_id: 1,
@@ -137,7 +131,6 @@ The product can be used in sync with a coffee table to create a complete cafe ta
 		price: 567.788,
 		quantity: 10
 	},
-
 	{id: 8,
 		name:"cafe chair G32",
 		category_id: 1,
@@ -148,7 +141,6 @@ The product can be used in sync with a coffee table to create a complete cafe ta
 		price: 681.345,
 		quantity: 10
 	},
-
 	{id: 9,
 		name:"Leather chair SG1020",
 		category_id: 1,
@@ -159,7 +151,6 @@ Plastic feet with wheels, plastic hands, bowls with the function of adjusting th
 		price: 1647.125,
 		quantity: 10
 	},
-
 	{id: 10,
 		name:"Leather chair SG920",
 		category_id: 1,
@@ -170,7 +161,6 @@ The chair has a reclining mechanism and a leg resting mechanism relaxes",
 		price: 2919.000,
 		quantity: 10
 	},
-
 	{id: 11,
 		name:"Bar chair SB01",
 		category_id: 1,
@@ -178,10 +168,10 @@ The chair has a reclining mechanism and a leg resting mechanism relaxes",
 		img:"https://hoaphat.net.vn/wp-content/uploads/SB01.jpg",
 		description:"SB01 bar chairs product with solid structure, modern design.
 Galvanized bar seats, PVC-covered foam cushions, height-adjustable seats with leg room",
+
 		price: 753.900,
 		quantity: 10
 	},
-
 	{id: 12,
 		name:"Bar chair SB03",
 		category_id: 1,
@@ -191,7 +181,6 @@ Galvanized bar seats, PVC-covered foam cushions, height-adjustable seats with le
 		price: 459.908,
 		quantity: 10
 	},
-
 	{id: 13,
 		name:"Office sleeping chair GNB",
 		category_id: 1,
@@ -202,7 +191,6 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		price: 643.493,
 		quantity: 10
 	},
-
 	{id: 14,
 		name:"Office sleeping chair GN02",
 		category_id: 1,
@@ -213,7 +201,6 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		price: 643.493,
 		quantity: 10
 	},
-
 	{id: 15,
 		name:"Office sleeping chair GNS2",
 		category_id: 1,
@@ -224,7 +211,6 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		price: 1268.600,
 		quantity: 10
 	},
-
 	{id: 16,
 		name:"Folding chair C135A",
 		category_id: 1,
@@ -235,7 +221,6 @@ Brackets Ø19.1mm steel, painted silver.",
 		price: 210.000,
 		quantity: 10
 	},
-
 	{id: 17,
 		name:"Folding chair G03A",
 		category_id: 1,
@@ -245,7 +230,6 @@ Brackets Ø19.1mm steel, painted silver.",
 G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam pads and felts commonly used in the dining room or lounge.",
 		price: 399.722,
 		quantity: 10},
-
 	{id: 18,
 		name:"Meeting chair SL711",
 		category_id: 1,
@@ -255,7 +239,6 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		price: 860.874,
 		quantity: 10
 	},
-
 	{id: 19,
 		name:"Meeting chair SL718",
 		category_id: 1,
@@ -265,7 +248,6 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		price: 708.383,
 		quantity: 10
 	},
-
 	{id:20,
 		name:"Meeting chair SL719",
 		category_id: 1,
@@ -275,7 +257,6 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		price: 884.667,
 		quantity: 10
 	},
-
 	{id: 21,
 		name:"Medline Lightweight Transport Wheelchair with Handbrakes",
 		category_id: 2,
@@ -286,7 +267,6 @@ Transport chair with powder coated aluminum ultralight frame is durable and has 
 		price: 174.96,
 		quantity: 10
 	},
-
 	{id: 22,
 		name:"Medline Transport Wheelchair with Lightweight Steel Frame",
 		category_id: 2,
@@ -297,7 +277,6 @@ Antimicrobial Product Protection - Nylon upholstery features Microban antimicrob
 		price: 149.96,
 		quantity: 10
 	},
-
 	{id: 23,
 		name:"Medline Premium Ultra-Lightweight Wheelchair with Flip-Back Desk ",
 		category_id: 2,
@@ -309,7 +288,6 @@ Premium welds ensure reliability and durability",
 		price: 200.58,
 		quantity: 10
 	},
-
 	{id: 24,
 		name:"2019 Folding Electric Powered Wheelchair Lightweight ",
 		category_id: 2,
@@ -320,7 +298,6 @@ FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design red
 		price: 300.58,
 		quantity: 10
 	},
-
 	{id: 25,
 		name:"ComfyGO Best Rated Exclusive Deluxe Electric Wheelchair",
 		category_id: 2,
@@ -330,7 +307,6 @@ FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design red
 ✔ TRAVEL EASILY - Convenient for storage and transport for folding feature and light-weight design for easy carrying. Now with the Bluetooth Remote Controller You can Control Your Wheelchair from a Distance. Joystick can be placed either left or right ride of the armrest",
 		price: 400.28,
 		quantity: 10},
-
 	{id: 26,
 		name:"Karman Healthcare S-Ergo 115 Limited Edition, Alpine White",
 		category_id: 2,
@@ -343,7 +319,6 @@ Removable Anti Bacterial Seat And Back Cushions",
 		price: 629.00,
 		quantity: 10
 	},
-
 	{id: 27,
 		name:"2019 UPGRADED Folding Electric Powered Wheelchair",
 		category_id: 2,
@@ -355,7 +330,6 @@ EASY TO OPERATE with a simple joystick design. It can be operated with one hand.
 		price: 500.80,
 		quantity: 0
 	}
-
 ])
 
 OrderStatus.delete_all

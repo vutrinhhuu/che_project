@@ -46,18 +46,22 @@
             <p>
               <%= @chair.description %>
             </p>
-            <%= form_for @order_item, remote: true do |f| %>
-              <div class="card_area d-flex justify-content-between align-items-center">
-                <div class="product_count">
-                  <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                  <%= f.text_field :quantity, value: 1, class: "input-number", min: 1 %>
-                  <span class="number-increment"> <i class="ti-plus"></i></span>
+            <% if @chair.quantity  == 0 %>
+              <h3 align="center" class="text-danger">SOLD OUT</h3>
+            <%else%>
+              <%= form_for @order_item, remote: true do |f| %>
+                <div class="card_area d-flex justify-content-between align-items-center">
+                  <div class="product_count">
+                    <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                    <%= f.text_field :quantity, value: 1, class: "input-number", min: 1 %>
+                    <span class="number-increment"> <i class="ti-plus"></i></span>
+                  </div>
+                  <%= f.hidden_field :chair_id, value: @chair.id %>
+                  <%= f.submit "Add to Cart", class: "btn_3" %>
+                  <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                 </div>
-                <%= f.hidden_field :chair_id, value: @chair.id %>
-                <%= f.submit "Add to Cart", class: "btn_3" %>
-                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
-              </div>
-            <% end %>
+              <% end %>
+            <%end%>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ class CreateChairs < ActiveRecord::Migration[5.0]
       t.string :img
       t.string :description
       t.integer :price
+      t.integer :quantity
     end
   end
 end

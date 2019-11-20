@@ -26,9 +26,10 @@
               <%- @billings.each do |billing| %>
                 <tr>
                   <td><%= billing.id %></td>
-                  <td><%= billing.order_id %></td>
+                  <td>#<%= billing.order_id %></td>
                   <td><%= billing.user.name %></td>
-                  <td><%= billing.total %></td>
+                  <td><%= billing.total %>$</td>
+                  <td><%= billing.created_at %></td>
                   <td><%= link_to "Info", admin_billing_path(billing.id), {:class=>'btn btn-primary'}%>
                   </td>
                 </tr>

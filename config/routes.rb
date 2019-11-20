@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
 
-    resources :billings, only: [:index, :show]
     resources :chairs
     resources :categories
+    resources :billings, only: [:index, :show]
   end
 end

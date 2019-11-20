@@ -69,18 +69,19 @@
   <!--================End Single Product Area =================-->
 
   <!--================comment==============-->
-  <section class="col-xs-12">
-    <div class="container">
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=679136475896132&autoLogAppEvents=1"></script>
-        <div class="fb-comments" data-href="<%=@url_current%>" data-width="1000" data-numposts="5"></div>
-    </div>
-  </section>
+
+  <div class="container mt-5 " >
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=679136475896132&autoLogAppEvents=1"></script>      
+      <div class="fb-like" data-href="<%=@url_current%>" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+      <div class="fb-comments" data-href="<%=@url_current%>" data-width="1100" data-numposts="5"></div>
+  </div>
+ 
   <!--================comment===============-->
 
 
   <!-- product_list other start-->
-  <section class="product_list best_seller">
+  <section class="product_list best_seller mt-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12">

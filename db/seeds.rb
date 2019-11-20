@@ -411,14 +411,14 @@ Billing.create!([
 		id: 6,
 		user_id: 1,
 		order_id: 6,
-		total: 3540.600,
+		total: 3539,
 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
 	},
 	{
 		id: 7,
 		user_id: 1,
 		order_id: 7,
-		total: 3540.600,
+		total: 3545,
 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
 	}
 	

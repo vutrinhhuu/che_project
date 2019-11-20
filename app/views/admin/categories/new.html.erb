@@ -37,20 +37,3 @@
   </section>
   
 </div>
-
-<script>
-$(document).ready(function(){
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        $('#priview_chair').attr('src', e.target.result);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-  $("#chair_img").change(function() {
-    readURL(this);
-  });
-});
-</script>

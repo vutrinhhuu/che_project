@@ -1,0 +1,107 @@
+<div class="content-wrapper">
+    <section class="content-header">
+    <h1>
+      Billing Detail
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Billing</li>
+      <li class="active">Detail</li>
+    </ol>
+    </section>
+    <br>
+    <section class="content">
+       <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row p-5">
+                                <div class="col-md-6">
+                                    <!--<img src="http://via.placeholder.com/400x90?text=logo">-->
+                                    <%= link_to image_tag("img/logo.png", height: '90') %>
+                                </div>
+        
+                                <div class="col-md-6 text-right">
+                                    <p class="font-weight-bold mb-1">Invoice #<%= @billing.id %></p>
+                                    <p class="text-muted">Due to: <%= @billing.created_at %></p>
+                                </div>
+                            </div>
+        
+                            <hr class="my-5">
+        
+                            <div class="row pb-5 p-5">
+                                <div class="col-md-6">
+                                    <p class="font-weight-bold mb-4">Client Information</p>
+                                    <p class="mb-1">Name: <%= @billing.user.name %></p>
+                                    <p class="mb-1">Email: <%= @billing.user.email %></p>
+                                    <p class="mb-1">Gender: <%= @billing.user.gender %></p>
+                                    <p class="mb-1">Address: <%= @billing.address %></p>
+                                </div>
+        
+                                <div class="col-md-6 text-right">
+                                    <p class="font-weight-bold mb-4">Payment Details</p>
+                                    <p class="mb-1"><span class="text-muted">Payment Type: </span> Root</p>
+                                    <p class="mb-1"><span class="text-muted">Name: </span> <%= @billing.user.name %></p>
+                                </div>
+                            </div>
+        
+                            <div class="row p-5">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-0 text-uppercase small font-weight-bold">ID</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Chair Name</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Quantity</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Unit Cost</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Meeting chair SL606</td>
+                                                <td>1</td>
+                                                <td>$963.900</td>
+                                                <td>$963.900</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Mesh chair GL401</td>
+                                                <td>2</td>
+                                                <td>$1288.350</td>
+                                                <td>$2576.700</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+        
+                            <div class="d-flex flex-row-reverse bg-dark text-white p-4">
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Grand Total</div>
+                                    <div class="h2 font-weight-light">$3540.600</div>
+                                </div>
+        
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Discount</div>
+                                    <div class="h2 font-weight-light">0%</div>
+                                </div>
+        
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Sub - Total amount</div>
+                                    <div class="h2 font-weight-light">$3540.600</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-light mt-5 mb-5 text-center small">by : <a class="text-light" target="_blank" href="http://totoprayogo.com">totoprayogo.com</a></div>
+        
+        </div>
+        
+    </section>
+</div>

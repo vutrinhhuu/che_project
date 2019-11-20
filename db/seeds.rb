@@ -55,8 +55,8 @@ User.create!([
 ])
 
 Category.delete_all
-Category.create! id: 1, name: "Smart office chair"
-Category.create! id: 2, name: "Wheelchair"
+Category.create! id: 1, name: "Smart office chair", description: "Smart office chair"
+Category.create! id: 2, name: "Wheelchair", description: "Wellchair"
 
 Chair.delete_all
 Chair.create!([
@@ -66,7 +66,7 @@ Chair.create!([
 		function: "Office chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-lung-trung-sl606.jpg",
 		description:"SL606 meeting chair is a kind of middle back meeting chair, PVC foam cushion, industrial leather or genuine leather. Plastic legs and arms.",
-		price: 963.900,
+		price: 963,
 		quantity: 0
 	},
 
@@ -77,7 +77,7 @@ Chair.create!([
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/GL401.jpg",
 		description:"Kneeling chair with Ni-Cr plated Oval tube, backrest using mesh-covered steel frame reduces heat accumulation but still keeps firm, soft.
 Sponge pads covered with porous mesh fabric, armrest, leather seats.",
-		price: 1288.350,
+		price: 1288,
 		quantity: 20
 		
 	},
@@ -90,7 +90,7 @@ Sponge pads covered with porous mesh fabric, armrest, leather seats.",
 		description:"Kneeling chair with Ni-Cr plated steel pipe, backrest and seat cushion using Ni-Cr plated steel frame combined with special mesh fabric has high strength to reduce heat accumulation.
 
 The armrests use shiny Ni-Cr plated steel create elegance.",
-		price: 1265.250,
+		price: 1265,
 		quantity: 20
 		},
 
@@ -104,7 +104,7 @@ The armrests use shiny Ni-Cr plated steel create elegance.",
 The chair is designed with arched back hugging to create a comfortable feeling when sitting.
 
 Mesh seat cushion is porous.",
-		price: 786.251,
+		price: 786,
 		quantity: 20
 	},
 
@@ -114,7 +114,7 @@ Mesh seat cushion is porous.",
 		function: "Office chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/gl406.jpg",
 		description:"Kneeling chair with Ni-Cr-plated round steel tube, backrest and seat cushion use Ni-Cr plated steel frame combined with special industrial-strength leather upholstery feels comfortable to use.",
-		price: 1155.000,
+		price: 1155,
 		quantity: 20
 	},
 
@@ -125,7 +125,7 @@ Mesh seat cushion is porous.",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-luoi-gl412m.jpg",
 		description:"Steel frame mesh seats, plastic chair seats made of mesh fabric create a cool feeling when used. Chair using plastic hands, foam cushions are covered with foam outside.
 With outstanding advantages: the chair is very smooth and airy, creating a pleasant feeling for users. The chair is suitable for use by office workers or for families.",
-		price: 989.573,
+		price: 989,
 		quantity: 20
 	},
 
@@ -136,7 +136,7 @@ With outstanding advantages: the chair is very smooth and airy, creating a pleas
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-cafe-G31-1.jpg",
 		description:"Cafe chair G31 static plastic chair, legs using steel pipe Ø19.
 The product can be used in sync with a coffee table to create a complete cafe tables and chairs.",
-		price: 567.788,
+		price: 567,
 		quantity: 20
 	},
 
@@ -147,7 +147,7 @@ The product can be used in sync with a coffee table to create a complete cafe ta
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-g32.jpg",
 		description:"G32 cafe chair with static plastic legs and legs using Ø19 steel pipe.
 The product can be used in sync with a coffee table to create a complete cafe tables and chairs.",
-		price: 681.345,
+		price: 681,
 		quantity: 20
 	},
 
@@ -158,7 +158,7 @@ The product can be used in sync with a coffee table to create a complete cafe ta
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-xoay-van-phong-hoa-phat-sg1020.jpg",
 		description:"High-quality swivel chair-type design, industrial leather-like memory foam cushions.
 Plastic feet with wheels, plastic hands, bowls with the function of adjusting the height of the chair and slightly reclining chair.",
-		price: 1647.125,
+		price: 1647,
 		quantity: 20
 	},
 
@@ -169,7 +169,7 @@ Plastic feet with wheels, plastic hands, bowls with the function of adjusting th
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/SG920.jpg",
 		description:"Leather chairs SG920 used with office space
 The chair has a reclining mechanism and a leg resting mechanism relaxes",
-		price: 2919.000,
+		price: 2919,
 		quantity: 20
 	},
 
@@ -180,7 +180,7 @@ The chair has a reclining mechanism and a leg resting mechanism relaxes",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/SB01.jpg",
 		description:"SB01 bar chairs product with solid structure, modern design.
 Galvanized bar seats, PVC-covered foam cushions, height-adjustable seats with leg room",
-		price: 753.900,
+		price: 753,
 		quantity: 20
 	},
 
@@ -190,7 +190,7 @@ Galvanized bar seats, PVC-covered foam cushions, height-adjustable seats with le
 		function: "Bar chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/SB03.jpg",
 		description:"Chair with 2 floors, black powder coated steel frame, need to change slightly low height, PVC foam cushion.",
-		price: 459.908,
+		price: 459,
 		quantity: 20
 	},
 
@@ -201,7 +201,7 @@ Galvanized bar seats, PVC-covered foam cushions, height-adjustable seats with le
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/GNB3.jpg",
 		description:"Xuan Phat office sleeping chair is designed for pregnant women when they want to take a nap at the office.
 The oval cushion surface helps pregnant women lie comfortably. Length adjustable foot mats.",
-		price: 643.493,
+		price: 643,
 		quantity: 20
 	},
 
@@ -212,7 +212,7 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/GN02.jpg",
 		description:"Xuan Phat office sleeping chair is designed for pregnant women when they want to take a nap at the office.
 The oval cushion surface helps pregnant women lie comfortably. Length adjustable foot mats.",
-		price: 643.493,
+		price: 643,
 		quantity: 20
 	},
 
@@ -223,7 +223,7 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/GNS2-Den1-510x510.jpg",
 		description:"Xuan Phat office sleeping chair is designed for pregnant women when they want to take a nap at the office.
 The oval cushion surface helps pregnant women lie comfortably. Length adjustable foot mats.",
-		price: 1268.600,
+		price: 1268,
 		quantity: 20
 	},
 
@@ -234,7 +234,7 @@ The oval cushion surface helps pregnant women lie comfortably. Length adjustable
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/C135A.jpg",
 		description:"C135A folding chair is a folding chair with cushion shaped like plastic spokes, oval steel frame 10 x 20mm.
 Brackets Ø19.1mm steel, painted silver.",
-		price: 210.000,
+		price: 210,
 		quantity: 20
 	},
 
@@ -245,7 +245,7 @@ Brackets Ø19.1mm steel, painted silver.",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/G03A.jpg",
 		description:"Folding chair G03A has been replaced with product code Folding chair G03
 G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam pads and felts commonly used in the dining room or lounge.",
-		price: 399.722,
+		price: 399,
 		quantity: 20
 		
 	},
@@ -256,7 +256,7 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		function: "office chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-phong-hop-SL711.jpg",
 		description:"Chair legs are kneeling with black powder coated steel pipes, the seats are made of cheese, the foam padding is covered with felt cloth, plastic hands.",
-		price: 860.874,
+		price: 860,
 		quantity: 20
 	},
 
@@ -266,7 +266,7 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		function: "office chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/HS712HS.jpg",
 		description:"Chair legs are kneeling with black powder coated steel pipes, the seats are made of cheese, the foam padding is covered with felt cloth, plastic hands.",
-		price: 708.383,
+		price: 708,
 		quantity: 20
 	},
 
@@ -276,7 +276,7 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		function: "office chair",
 		remote_img_url:"https://hoaphat.net.vn/wp-content/uploads/ghe-phong-hop-SL719.jpg",
 		description:"Chair legs are kneeling with black powder coated steel pipes, the seats are made of cheese, the foam padding is covered with felt cloth, plastic hands.",
-		price: 884.667,
+		price: 884,
 		quantity: 20
 	},
 
@@ -287,7 +287,7 @@ G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam
 		remote_img_url:"https://images-na.ssl-images-amazon.com/images/I/812DUc9PrCL._AC_SL1500_.jpg",
 		description:"Medline transport lightweight wheelchair has large 12 inch rear wheels for better performance on uneven outdoor surfaces | Loop-style manual handbrakes are ideal for locking the rear wheels during transfers
 Transport chair with powder coated aluminum ultralight frame is durable and has a weight capacity of 300 lbs",
-		price: 174.96,
+		price: 174,
 		quantity: 20
 	},
 
@@ -298,7 +298,7 @@ Transport chair with powder coated aluminum ultralight frame is durable and has 
 		remote_img_url:"https://images-na.ssl-images-amazon.com/images/I/81eQI5aNIBL._AC_SL1500_.jpg",
 		description:"Medline lightweight transport chair features swing-away footrests and locking brakes to make transfers easy, large 12 inch wheels, and special armrests that allow you to sit close to most desks or tables
 Antimicrobial Product Protection - Nylon upholstery features Microban antimicrobial technology for built-in protection that inhibits the growth of stains and odors from bacteria, mold & mildew",
-		price: 149.96,
+		price: 149,
 		quantity: 20
 	},
 
@@ -310,7 +310,7 @@ Antimicrobial Product Protection - Nylon upholstery features Microban antimicrob
 		description:"Flip-back, desk-length arms make it easy to navigate under tables | elevating leg rests enhance comfort and remove easily
 Breathable nylon upholstery is soft and comfortable
 Premium welds ensure reliability and durability",
-		price: 200.58,
+		price: 200,
 		quantity: 20
 	},
 
@@ -321,7 +321,7 @@ Premium welds ensure reliability and durability",
 		remote_img_url:"https://images-na.ssl-images-amazon.com/images/I/61z2eXk3VkL._AC_SL1400_.jpg",
 		description:"ULTRA LIGHT WEIGHT - WISGING D09 Electric Wheelchair is just 58 lbs with battery! The versatile wheelchair is assembled with Aluminum Alloy Foldable chair, 6AH Lithium battery*2, antiseptic, breathable seat and back cushions.
 FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design reduces The Travel Buggy in seconds to a compact unit about the size of a suitcase for storage or travel. Includes a black travel bag, making transporting even easier and convenient.",
-		price: 300.58,
+		price: 300,
 		quantity: 20
 	},
 
@@ -332,7 +332,7 @@ FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design red
 		remote_img_url:"https://images-na.ssl-images-amazon.com/images/I/613yLwOPejL._AC_SL1026_.jpg",
 		description:"✔ As a US Company We are Giving Gold Standard 24x7 Customer Support for All of Our Customers. Now with an Unbeatable Price. Warranty: 3 year for Frame, 1 Year for Motor and Joystick Controller, 6 Months for Battery
 ✔ TRAVEL EASILY - Convenient for storage and transport for folding feature and light-weight design for easy carrying. Now with the Bluetooth Remote Controller You can Control Your Wheelchair from a Distance. Joystick can be placed either left or right ride of the armrest",
-		price: 400.28,
+		price: 400,
 		quantity: 20
 		
 	},
@@ -346,7 +346,7 @@ FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design red
 Limited Edition Alpine White Frame
 Breathable Mesh Upholstery and Back Pouch Standard
 Removable Anti Bacterial Seat And Back Cushions",
-		price: 629.00,
+		price: 629,
 		quantity: 20
 	},
 
@@ -358,7 +358,7 @@ Removable Anti Bacterial Seat And Back Cushions",
 		description:"THE SAFEST AND MOST RELIABLE electric wheelchair available in the market today. The INNUOVO Power Wheelchair is FDA approved and can be used for air travel.
 LIGHTWEIGHT AND PORTABLE device that folds to easily fit in the trunk of your car. The entire device, including batteries, weighs 50 lb.
 EASY TO OPERATE with a simple joystick design. It can be operated with one hand.",
-		price: 500.80,
+		price: 500,
 		quantity: 20
 	}
 

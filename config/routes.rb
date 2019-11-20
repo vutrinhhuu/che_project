@@ -13,15 +13,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-<<<<<<< HEAD
-    resources :chairs
-    resources :categories
-    resources :billings, only: [:index, :show]
-=======
 
-    resources :billings, only: [:index, :show]
     resources :chairs
     resources :categories
->>>>>>> modified route
+    resources :billings, only: [:index, :show]
   end
 end

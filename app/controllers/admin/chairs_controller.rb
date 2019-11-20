@@ -7,7 +7,7 @@ class Admin::ChairsController < ApplicationController
     @chairs = Chair.all.order(id: :desc).page(params[:page]).per(10)
     @categories = Category.all
     if params[:category] && params[:category] != "0"
-      @category_id = params[:category]
+      @category_id = params[:category].to_i
       @category = @categories.find(@category_id)
       @chairs = @category.chairs
     else

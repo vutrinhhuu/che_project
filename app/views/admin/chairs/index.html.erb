@@ -22,11 +22,11 @@
               <select class="form-control" id="category" name="category">
                 <option value="0">Select all</option>
                 <% @categories.each do |c| %>
-                  <option value="<%=c.id%>"><%=c.name%></option>
+                  <option value="<%=c.id%>" <% if c.id === @category_id %>selected<%end%>><%=c.name%></option>
                 <%end%>
               </select>
             </div>
-            <%= f.search_field :name_cont, class: "form-control", placeholder: "Seach by name", style: "float:left;width:300px" %>
+            <%= f.search_field :name, class: "form-control", placeholder: "Seach by name", style: "float:left;width:300px" %>
             <span class="input-group-btn">
                 <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </span>

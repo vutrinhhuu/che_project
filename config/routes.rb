@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :users
     resources :chairs
     resources :categories
+    resources :billings, only: [:index, :show]
   end
 end

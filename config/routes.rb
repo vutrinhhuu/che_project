@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
 
   get 'admin/dashboard'
+  
+  get 'chart', to: 'admin#show_chart'
 
   root "static_pages#home"
   
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-
     resources :chairs
     resources :categories
     resources :billings, only: [:index, :show]

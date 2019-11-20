@@ -369,3 +369,57 @@ OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
 OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Cancelled"
+
+Billing.delete_all
+Billing.create!([
+	{
+		id: 1,
+		user_id: 1,
+		order_id: 1,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 2,
+		user_id: 1,
+		order_id: 2,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 3,
+		user_id: 1,
+		order_id: 3,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 4,
+		user_id: 1,
+		order_id: 4,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 5,
+		user_id: 1,
+		order_id: 5,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 6,
+		user_id: 1,
+		order_id: 6,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 7,
+		user_id: 1,
+		order_id: 7,
+		total: 3540.600,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	}
+	
+])

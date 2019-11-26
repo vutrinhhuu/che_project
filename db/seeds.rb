@@ -377,35 +377,40 @@ Billing.create!([
 		user_id: 1,
 		order_id: 1,
 		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-10-20 16:22:41 UTC"
 	},
 	{
 		id: 2,
 		user_id: 1,
 		order_id: 2,
 		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-10-20 16:22:41 UTC"
 	},
 	{
 		id: 3,
 		user_id: 1,
 		order_id: 3,
 		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-10-20 16:22:41 UTC"
 	},
 	{
 		id: 4,
 		user_id: 1,
 		order_id: 4,
 		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-9-20 16:22:41 UTC"
 	},
 	{
 		id: 5,
 		user_id: 1,
 		order_id: 5,
 		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-9-20 16:22:41 UTC"
 	},
 	{
 		id: 6,
@@ -420,6 +425,38 @@ Billing.create!([
 		order_id: 7,
 		total: 3545,
 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+	},
+	{
+		id: 8,
+		user_id: 1,
+		order_id: 7,
+		total: 3545,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-8-20 16:22:41 UTC"
+	},
+	{
+		id: 9,
+		user_id: 1,
+		order_id: 7,
+		total: 3545,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-7-20 16:22:41 UTC"
+	},
+	{
+		id: 10,
+		user_id: 1,
+		order_id: 7,
+		total: 3545,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-7-20 16:22:41 UTC"
+	},
+	{
+		id: 11,
+		user_id: 1,
+		order_id: 7,
+		total: 3545,
+		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+		created_at: "2019-7-20 16:22:41 UTC"
 	}
 	
 ])

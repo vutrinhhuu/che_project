@@ -5,7 +5,7 @@ class AdminController < ApplicationController
     @summary_user = User.count
     @summary_chair = Chair.where("quantity > 0").sum(:quantity)
     @summary_billing = Billing.count
-    @summary_chair_sold_out = Chair.where("quantity", 0).sum(:quantity)
+    @summary_chair_sold_out = Chair.where(quantity: 0).count
     @total_payment = Billing.sum(:total)
     @billing_max = Billing.maximum(:total)
     @billing_min = Billing.minimum(:total)
@@ -14,7 +14,7 @@ class AdminController < ApplicationController
   
   def show_chart
     @summary =  Billing.all
-    @sum_by_month = [0,0,0,0,0,0,0,0,0,0,0,0]
+    @sum_by_month = [0,0,0,0,0,0,0,0,0,0,0]
     @summary.each do |i|
       (0..11).each do |m|
         if (i.created_at.month.to_i-1) == m

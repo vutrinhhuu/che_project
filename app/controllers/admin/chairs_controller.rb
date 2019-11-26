@@ -43,9 +43,9 @@ class Admin::ChairsController < ApplicationController
     @chair.category_id = params[:category_id]
     if @chair.update_attributes chair_params
       flash[:success] = "Info chair updated"
-      redirect_to admin_chairs_path
+      redirect_to :back
     else
-      flash[:danger] = "Can not update new chair"
+      flash[:danger] = "Can not update chair"
       redirect_to :back
     end
   end

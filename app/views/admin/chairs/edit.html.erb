@@ -15,7 +15,7 @@
       <%= form_for(@chair, as: :chair,:html => {:class => 'row'}, url: admin_chair_path(@chair.id), method: :put) do |f| %>
         <% flash.each do |key, value| %>
           <div id="error_explanation" style="mt-5">
-            <div class="alert alert-danger col-lg-6 col-lg-offset-3">
+            <div class="alert alert-success col-lg-6 col-lg-offset-3">
                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                <strong><%= value unless value.blank? %>!</strong>
             </div>

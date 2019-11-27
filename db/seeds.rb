@@ -79,7 +79,7 @@ Chair.create!([
 Sponge pads covered with porous mesh fabric, armrest, leather seats.",
 		price: 1288,
 		quantity: 20
-		
+
 	},
 
 	{id: 3,
@@ -247,7 +247,7 @@ Brackets Ø19.1mm steel, painted silver.",
 G03A folding chairs are folding chairs, Ø22 steel pipe frames, PVC-covered foam pads and felts commonly used in the dining room or lounge.",
 		price: 399,
 		quantity: 20
-		
+
 	},
 
 	{id: 18,
@@ -334,7 +334,7 @@ FOLDING COMPACT DESIGN - WISGING D09 Electric Wheelchair easy to fold design red
 ✔ TRAVEL EASILY - Convenient for storage and transport for folding feature and light-weight design for easy carrying. Now with the Bluetooth Remote Controller You can Control Your Wheelchair from a Distance. Joystick can be placed either left or right ride of the armrest",
 		price: 400,
 		quantity: 20
-		
+
 	},
 
 	{id: 26,
@@ -370,82 +370,86 @@ OrderStatus.create! id: 2, name: "Placed"
 OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Cancelled"
 
-Billing.delete_all
-Billing.create!([
-	{
-		id: 1,
-		user_id: 1,
-		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-10-20 16:22:41 UTC"
-	},
-	{
-		id: 2,
-		user_id: 1,
-		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-10-20 16:22:41 UTC"
-	},
-	{
-		id: 3,
-		user_id: 1,
-		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-10-20 16:22:41 UTC"
-	},
-	{
-		id: 4,
-		user_id: 1,
-		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-9-20 16:22:41 UTC"
-	},
-	{
-		id: 5,
-		user_id: 1,
-		total: 3540.600,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-9-20 16:22:41 UTC"
-	},
-	{
-		id: 6,
-		user_id: 1,
-		total: 3539,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
-	},
-	{
-		id: 7,
-		user_id: 1,
-		total: 3545,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
-	},
-	{
-		id: 8,
-		user_id: 1,
-		total: 3545,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-8-20 16:22:41 UTC"
-	},
-	{
-		id: 9,
-		user_id: 1,
-		total: 3545,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-7-20 16:22:41 UTC"
-	},
-	{
-		id: 10,
-		user_id: 1,
-		total: 3545,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-7-20 16:22:41 UTC"
-	},
-	{
-		id: 11,
-		user_id: 1,
-		total: 3545,
-		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
-		created_at: "2019-7-20 16:22:41 UTC"
-	}
+# Billing.delete_all
+# Billing.create!([
+# 	{
+# 		id: 1,
+# 		user_id: 1,
+# 		total: 3540.600,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-10-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 2,
+# 		user_id: 1,
+# 		total: 3540.600,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-10-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 3,
+# 		user_id: 1,
+# 		total: 3540.600,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-10-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 4,
+# 		user_id: 1,
+# 		total: 3540.600,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-9-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 5,
+# 		user_id: 1,
+# 		total: 3540.600,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-9-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 6,
+# 		user_id: 1,
+# 		total: 3539,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+# 	},
+# 	{
+# 		id: 7,
+# 		user_id: 1,
+# 		total: 3545,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi"
+# 	},
+# 	{
+# 		id: 8,
+# 		user_id: 1,
+# 		total: 3545,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-8-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 9,
+# 		user_id: 1,
+# 		total: 3545,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-7-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 10,
+# 		user_id: 1,
+# 		total: 3545,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-7-20 16:22:41 UTC"
+# 	},
+# 	{
+# 		id: 11,
+# 		user_id: 1,
+# 		total: 3545,
+# 		address: "210 Le Trong Tan, Phuong Mai, Ha Noi",
+# 		created_at: "2019-7-20 16:22:41 UTC"
+# 	}
 	
-])
+# ])
+
+ActiveRecord::Base.connection.tables.each do |t|
+	ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end

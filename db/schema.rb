@@ -16,12 +16,23 @@ ActiveRecord::Schema.define(version: 20191123045102) do
   enable_extension "plpgsql"
 
   create_table "billings", force: :cascade do |t|
-    t.decimal  "total",      precision: 12, scale: 3
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "country"
+    t.string   "city"
     t.string   "address"
+    t.string   "phone_number"
+    t.string   "email"
+    t.text     "note"
+    t.decimal  "subtotal",       precision: 12, scale: 3
+    t.decimal  "shipping",       precision: 12, scale: 3
+    t.decimal  "total",          precision: 12, scale: 3
+    t.integer  "payment_method"
+    t.integer  "status"
     t.integer  "user_id"
     t.integer  "order_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["order_id"], name: "index_billings_on_order_id", using: :btree
     t.index ["user_id"], name: "index_billings_on_user_id", using: :btree
   end

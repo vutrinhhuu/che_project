@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
 
   get 'admin/dashboard'
-  
+
   get 'chart', to: 'admin#show_chart'
 
   root "static_pages#home"
-  
+
   #resources users
   resources :users,  only: [:index, :edit, :update]
+
+  resources :billings, only: [:new, :create, :index, :show, :delete]
 
   namespace :admin do
     resources :users

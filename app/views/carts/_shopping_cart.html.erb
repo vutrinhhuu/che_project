@@ -115,8 +115,8 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="btn_1" href="#">Continue Shopping</a>
-            <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+            <%= link_to "Continue Shopping", chairs_path, class: 'btn_1' %>
+            <%= link_to "Proceed to Checkout", new_billing_path, class: 'btn_1 checkout_btn_1' %>
           </div>
         </div>
       </div>

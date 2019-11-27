@@ -5,7 +5,7 @@ class CreateChairs < ActiveRecord::Migration[5.0]
       t.references :category, foreign_key: true
       t.string :function
       t.string :img
-      t.string :description
+      t.text :description
       t.integer :price
       t.integer :quantity
     end

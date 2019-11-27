@@ -5123,6 +5123,7 @@ ul {
   line-height: 38px;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 991px) {

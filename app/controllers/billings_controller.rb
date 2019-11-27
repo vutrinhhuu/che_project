@@ -1,0 +1,3 @@
+class BillingsController < ApplicationController
+
+end

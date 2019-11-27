@@ -1,0 +1,122 @@
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="breadcrumb_iner">
+            <div class="breadcrumb_iner_item">
+              <h2>Product Checkout</h2>
+              <p>Home <span>-</span> Shop Single</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb start-->
+
+  <!--================Checkout Area =================-->
+  <section class="checkout_area padding_top">
+    <div class="container">
+      <% if !user_signed_in? %>
+        <div class="returning_customer">
+          <div class="check_title">
+            <h2>
+              You need to login to proceed checkout !
+              <%= link_to "Click here to login", new_user_session_path %>
+            </h2>
+          </div>
+        </div>
+      <% else %>
+        <%= form_for :billing, html: {class: 'row contact_form'} do |f| %>
+          <div class="billing_details">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3>Billing Details</h3>
+                  <div class="col-md-6 form-group p_star">
+                    <%= f.text_field :first_name, class: "form-control" %>
+                    <span class="placeholder" data-placeholder="First name"></span>
+                  </div>
+                  <div class="col-md-6 form-group p_star">
+                    <%= f.text_field :last_name, class: "form-control" %>
+                    <span class="placeholder" data-placeholder="Last name"></span>
+                  </div>
+                  <div class="col-md-6 form-group p_star">
+                    <%= f.text_field :phone_number, class: "form-control" %>
+                    <span class="placeholder" data-placeholder="Phone number"></span>
+                  </div>
+                  <div class="col-md-6 form-group p_star">
+                    <%= f.email_field :email, class: "form-control" %>
+                    <span class="placeholder" data-placeholder="Email Address"></span>
+                  </div>
+                  <div class="col-md-12 form-group p_star">
+                    <%= f.select :country, ["Vietnam", "Japan", "USA"], {prompt: 'Country'}, { :class => 'country_select' } %>
+                  </div>
+                  <div class="col-md-12 form-group p_star">
+                    <%= f.text_field :address, class: "form-control" %>
+                    <span class="placeholder" data-placeholder="Address"></span>
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <%= f.text_area :note, rows: 1, class: "form-control", placeholder: "Order Notes" %>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="order_box">
+                  <h2>Your Order</h2>
+                  <ul class="list">
+                    <li>
+                      <a href="#">Product
+                        <span>Total</span>
+                      </a>
+                    </li>
+                    <% current_order.order_items.each do |item| %>
+                      <li>
+                        <a href="#"><%= item.chair.name %>
+                          <span class="middle">x <%= item.quantity %></span>
+                          <span class="last">$<%= item.total_price %></span>
+                        </a>
+                      </li>
+                    <% end %>
+                  </ul>
+                  <ul class="list list_2">
+                    <li>
+                      <a href="#">Subtotal
+                        <span>$<%= current_order.subtotal %></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Shipping
+                        <span>Flat rate: $50.00</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Total
+                        <span>$<%= current_order.subtotal + 50 %></span>
+                      </a>
+                    </li>
+                  </ul>
+                  <br>
+                  <h2>Payment method</h2>
+                  <div class="payment_item">
+                    <div class="radion_btn">
+                      <input type="radio" id="f-option5" name="selector" />
+                      <label for="f-option5">COD</label>
+                      <div class="check"></div>
+                    </div>
+                  </div>
+                  <div class="payment_item active">
+                    <div class="radion_btn">
+                      <input type="radio" id="f-option6" name="selector" />
+                      <label for="f-option6">Paypal </label>
+                      <img src="img/product/single-product/card.jpg" alt="" />
+                      <div class="check"></div>
+                    </div>
+                  </div>
+                  <%= f.submit "Checkout", class: "btn_3" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+  </section>

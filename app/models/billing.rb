@@ -1,4 +1,4 @@
 class Billing < ApplicationRecord
-    belongs_to :user, optional: true
-    belongs_to :order, optional: true
+    belongs_to :user
+    belongs_to :order
 end

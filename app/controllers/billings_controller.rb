@@ -8,6 +8,8 @@ class BillingsController < ApplicationController
     @billing.order = current_order
     @billing.user = current_user
     if @billing.save
+      session.delete(:order_id)
+      @billing.order.status_id = 2
       flash[:success] = "Successfully checkout!"
       redirect_to billing_path(@billing)
     else

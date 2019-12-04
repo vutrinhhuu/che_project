@@ -77,3 +77,29 @@ a {
 .mt-70 {
   margin-top: 70px
 }
+.description-banner {
+  font-size:14px;
+  height: 220px
+}
+.owl-nav {
+  display:none !important
+}
+.ml-45{
+  margin-left: 45px
+}
+.slide{
+  opacity: 0.5;position: absolute;
+  height:550px
+}
+.text_slide{
+ position: relative;
+ margin-top:100px
+}
+
+.slide_2{
+  opacity: 0.5;position: absolute;
+}
+.text_slide_2{
+ position: relative;
+ margin-top:100px;
+}

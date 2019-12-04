@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20191123045102) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "billings", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -33,8 +30,8 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.integer  "order_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
-    t.index ["order_id"], name: "index_billings_on_order_id", using: :btree
-    t.index ["user_id"], name: "index_billings_on_user_id", using: :btree
+    t.index ["order_id"], name: "index_billings_on_order_id"
+    t.index ["user_id"], name: "index_billings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -52,7 +49,7 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.text    "description"
     t.integer "price"
     t.integer "quantity"
-    t.index ["category_id"], name: "index_chairs_on_category_id", using: :btree
+    t.index ["category_id"], name: "index_chairs_on_category_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -63,8 +60,8 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.decimal  "total_price", precision: 12, scale: 3
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.index ["chair_id"], name: "index_order_items_on_chair_id", using: :btree
-    t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
+    t.index ["chair_id"], name: "index_order_items_on_chair_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -81,7 +78,7 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.integer  "order_status_id"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.index ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,8 +97,8 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.integer  "role"
     t.string   "provider"
     t.string   "uid"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "valuations", force: :cascade do |t|
@@ -110,10 +107,4 @@ ActiveRecord::Schema.define(version: 20191123045102) do
     t.string  "content"
   end
 
-  add_foreign_key "billings", "orders"
-  add_foreign_key "billings", "users"
-  add_foreign_key "chairs", "categories"
-  add_foreign_key "order_items", "chairs"
-  add_foreign_key "order_items", "orders"
-  add_foreign_key "orders", "order_statuses"
 end

@@ -32,17 +32,20 @@
         
                             <div class="row pb-5 p-5">
                                 <div class="col-md-6">
-                                    <p class="font-weight-bold mb-4">Client Information</p>
-                                    <p class="mb-1">Name: <%= @billing.user.name %></p>
-                                    <p class="mb-1">Email: <%= @billing.user.email %></p>
-                                    <p class="mb-1">Gender: <%= @billing.user.gender %></p>
+                                    <p class="font-weight-bold mb-4">Billing Information</p>
+                                    <% binding.pry %>
+                                    <p class="mb-1">Name: <%= @billing.first_name + ' ' + @billing.last_name %></p>
+                                    <p class="mb-1">Email: <%= @billing.email %></p>
+                                    <p class="mb-1">Phone number: <%= @billing.phone_number %></p>
+                                    <p class="mb-1">Country: <%= @billing.city %></p>
                                     <p class="mb-1">Address: <%= @billing.address %></p>
+                                    <p class="mb-1">Note: <%= @billing.note %></p>
                                 </div>
         
                                 <div class="col-md-6 text-right">
                                     <p class="font-weight-bold mb-4">Payment Details</p>
-                                    <p class="mb-1"><span class="text-muted">Payment Type: </span> Root</p>
-                                    <p class="mb-1"><span class="text-muted">Name: </span> <%= @billing.user.name %></p>
+                                    <p class="mb-1"><span class="text-muted">Payment Type: </span> <%= @billing.payment_method.upcase %></p>
+                                    <p class="mb-1"><span class="text-muted">Status: </span> <%= @billing.status %></p>
                                 </div>
                             </div>
         
@@ -59,20 +62,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Meeting chair SL606</td>
-                                                <td>1</td>
-                                                <td>$963.900</td>
-                                                <td>$963.900</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mesh chair GL401</td>
-                                                <td>2</td>
-                                                <td>$1288.350</td>
-                                                <td>$2576.700</td>
-                                            </tr>
+                                            <% @billing.order.order_items.each do |item| %>
+                                                <tr>
+                                                    <td><%= item.chair.id %></td>
+                                                    <td><%= item.chair.name %></td>
+                                                    <td><%= item.quantity %></td>
+                                                    <td>$<%= item.unit_price %></td>
+                                                    <td>$<%= item.total_price %></td>
+                                                </tr>
+                                            <% end %>
                                         </tbody>
                                     </table>
                                 </div>
@@ -81,7 +79,12 @@
                             <div class="d-flex flex-row-reverse bg-dark text-white p-4">
                                 <div class="py-3 px-5 text-right">
                                     <div class="mb-2">Grand Total</div>
-                                    <div class="h2 font-weight-light">$3540.600</div>
+                                    <div class="h2 font-weight-light">$<%= @billing.subtotal %></div>
+                                </div>
+
+                                 <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Shipping</div>
+                                    <div class="h2 font-weight-light">$<%= @billing.shipping %></div>
                                 </div>
         
                                 <div class="py-3 px-5 text-right">
@@ -91,7 +94,7 @@
         
                                 <div class="py-3 px-5 text-right">
                                     <div class="mb-2">Sub - Total amount</div>
-                                    <div class="h2 font-weight-light">$3540.600</div>
+                                    <div class="h2 font-weight-light">$<%= @billing.total %></div>
                                 </div>
                             </div>
                         </div>

@@ -16,6 +16,9 @@ class CreateBillings < ActiveRecord::Migration[5.0]
       t.integer :status
       t.references :user, foreign_key: true
       t.references :order, foreign_key: true
+      t.datetime :expires_at
+      t.datetime :purchased_at
+      t.datetime :deleted_at
       t.timestamps
     end
   end

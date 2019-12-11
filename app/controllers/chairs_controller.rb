@@ -1,4 +1,5 @@
 class ChairsController < ApplicationController
+    skip_before_filter :verify_authenticity_token  
     def index
         @categories = Category.all
         if params[:category]
@@ -45,5 +46,24 @@ class ChairsController < ApplicationController
             end
             @histories = current_user.recommend_histories.where("chair_id != ?", params[:id]).limit(4).order(updated_at: :desc)
         end 
+    end
+    
+    def rating
+        @chair_id = params[:chair_id]
+        @point = params[:point]
+        @rating = Rating.new(user_id: current_user.id, chair_id: @chair_id, point: @point).save
+        @point_summary = Chair.find(@chair_id).ratings.sum(:point)
+        @count_rating = Chair.find(@chair_id).ratings.count
+        @point_avg = @point_summary/@count_rating
+        @chair = Chair.find(params[:chair_id])
+        @chair.update rating: @point_avg
+        render json:@point_avg
+    end
+    
+    def get_rating
+        if current_user
+            @rating = Rating.where("chair_id = ? and user_id = ?",params[:chair_id], current_user.id).first
+            render json:@rating
+        end
     end
 end

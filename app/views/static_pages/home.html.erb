@@ -1,42 +1,12 @@
 
 
 <!-- banner part start-->
-<section class="banner_part">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="banner_slider owl-carousel">
-                    <% @slide_chairs.each_with_index do |chair| %>
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1><%= link_to chair.name, chair_path(chair.id)%></h1>
-                                            <p><%= chair.description %></p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block" style="width:500px;height:200px;top:17%">
-                                    <%= image_tag chair.img %>
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- banner part start-->
-
-<section class="feature_part padding_top">
+<section class="banner_part feature_part padding_top">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="section_tittle text-center">
-                    <h2>Featured Category</h2>
+                    <h2>We committed to your safety & comfort</h2>
                 </div>
             </div>
         </div>
@@ -46,7 +16,7 @@
                     <div class="single_feature_post_text">
                         <p><%= category.description %></p>
                         <h3><%= category.name %></h3>
-                        <a href="<%= chairs_path(category: category.id) %>%" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+                        <a href="<%= chairs_path(category: category.id) %>" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
                         <%= image_tag category.img, width: '65%' %>
                     </div>
                 </div>
@@ -78,8 +48,13 @@
                                             <h4><%= link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible'}%> </h4>
                                             <b class="text-danger">$<%= chair.price %></b>
                                             <p id=""><%=chair.rating%><span class="glyphicon glyphicon-star star-avg" ></span></p>
-                                            <% if chair.quantity >0 %>
-                                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <% if chair.quantity > 0 %>
+                                                <%= form_for @order_item, remote: true do |f| %>
+                                                    <%= f.hidden_field :quantity, value: 1 %>
+                                                    <%= f.hidden_field :chair_id, value: chair.id %>
+                                                    <%= f.submit "Add to Cart", class: "btn_3 d-none", id: "add_cart" + chair.id.to_s %>
+                                                    <a href="javascript:$('#add_cart<%= chair.id.to_s %>').click();" class="add_cart">+ add to cart</a>
+                                                <% end %>
                                             <%else%>
                                                 <h3 align="left" class="text-danger">SOLD OUT</h3>
                                             <%end%>

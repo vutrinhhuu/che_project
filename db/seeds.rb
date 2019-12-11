@@ -164,7 +164,7 @@ Antimicrobial Product Protection - Nylon upholstery features Microban antimicrob
 		category_id: 2,
 		brand_id: 1,
 		function: "Wheelchair",
-		remote_img_url:"https://images-na.ssl-images-amazon.com/images/I/81eQI5aNIBL._AC_SX522_.jpg",
+		remote_img_url:"https://www.medline.com/media/catalog/sku/mds/MDS806700_PRI04.JPG",
 		description:"Wheelchairs feature threaded seat screw inserts to minimize stripping from upholstery changes
 		Armrests and calf pads (if included) are upholstered and padded
 		Carbon steel frame has rust- and chip-resistant chrome plating while navy vinyl upholstery is easy to clean",

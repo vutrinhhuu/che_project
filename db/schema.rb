@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20191211064329) do
     t.text    "description"
     t.integer "price"
     t.integer "quantity"
-    t.index ["brand_id"], name: "index_chairs_on_brand_id", using: :btree
     t.float   "rating",      default: 0.0
+    t.index ["brand_id"], name: "index_chairs_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_chairs_on_category_id", using: :btree
   end
 

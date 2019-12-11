@@ -32,5 +32,11 @@ class ChairsController < ApplicationController
         @list_other_chair = Chair.where("id!=?",params[:id]).limit(4).order(id: :desc)
         @url_current = request.original_url
         @order_item = current_order.order_items.new
+        if current_user
+            @chair_history = RecommendHistory.new(user_id: current_user.id, chair_id: params[:id])
+            @chair_history.save
+            @histories = RecommendHistory.select('distinct(chair_id)').where("user_id = ? and chair_id != ?", current_user.id, params[:id])
+            @count = @histories.count
+        end 
     end
 end

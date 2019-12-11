@@ -31,8 +31,18 @@
                                 <ul class="list">
                                     <% @categories.each do |category| %>
                                         <li>
-                                            <%= link_to category.name, chairs_path(category: category.id)  %></a>
+                                            <%= link_to category.name, chairs_path(category: category.id)  %>
                                             <span>(<%= category.chairs.count %>)</span>
+                                            <ul class="list">
+                                                <% category.brands.each do |brand| %>
+                                                <li class="brand_img">
+                                                    <%= link_to (image_tag brand.img, width: '50%') , chairs_path(brand: brand.id) %>
+                                                    <% if params[:brand] && brand.id == @brand.id %>
+                                                        <i class="fa fa-caret-right"></i>
+                                                    <% end %>
+                                                </li>
+                                                <% end %>
+                                            </ul>
                                         </li>
                                     <% end %>
                                 </ul>

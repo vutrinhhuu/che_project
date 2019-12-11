@@ -31,6 +31,30 @@
 </section>
 <!-- banner part start-->
 
+<section class="feature_part padding_top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_tittle text-center">
+                    <h2>Featured Category</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <% @categories.each do |category| %>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="single_feature_post_text">
+                        <p><%= category.description %></p>
+                        <h3><%= category.name %></h3>
+                        <a href="<%= chairs_path(category: category.id) %>%" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+                        <%= image_tag category.img, width: '65%' %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>
+
 <!-- product_list start-->
 <section class="product_list section_padding">
     <div class="container">
@@ -166,6 +190,27 @@
 <!--</section>-->
 <!-- product_list part end-->
 
+<section class="client_logo padding_bottom ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_tittle text-center">
+                    <h2>Our brands</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <% @brands.each do |brand| %>
+                    <div class="single_client_logo">
+                        <%= link_to (image_tag brand.img, width: 125), chairs_path(brand: brand.id) %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- subscribe_area part start-->
 <section class="subscribe_area section_padding">
     <div class="container">
@@ -190,42 +235,4 @@
 <!--::subscribe_area part end::-->
 
 <!-- subscribe_area part start-->
-<section class="client_logo padding_top">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_1.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_2.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_3.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_4.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_5.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_3.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_1.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_2.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_3.png") %>
-                </div>
-                <div class="single_client_logo">
-                    <%= image_tag("img/client_logo/client_logo_4.png") %>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!--::subscribe_area part end::-->

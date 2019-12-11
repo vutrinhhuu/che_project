@@ -4,6 +4,9 @@ class ChairsController < ApplicationController
         if params[:category]
             @category = @categories.find(params[:category])
             @chairs = @category.chairs
+        elsif params[:brand]
+            @brand = Brand.find params[:brand]
+            @chairs = @brand.chairs
         else
             @chairs = Chair.all
         end

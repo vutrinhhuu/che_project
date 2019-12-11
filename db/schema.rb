@@ -31,15 +31,29 @@ ActiveRecord::Schema.define(version: 20191209020627) do
     t.integer  "status"
     t.integer  "user_id"
     t.integer  "order_id"
+    t.datetime "expires_at"
+    t.datetime "purchased_at"
+    t.datetime "deleted_at"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.index ["order_id"], name: "index_billings_on_order_id", using: :btree
     t.index ["user_id"], name: "index_billings_on_user_id", using: :btree
   end
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "img"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_brands_on_category_id", using: :btree
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
+    t.string   "img"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -47,11 +61,13 @@ ActiveRecord::Schema.define(version: 20191209020627) do
   create_table "chairs", force: :cascade do |t|
     t.string  "name"
     t.integer "category_id"
+    t.integer "brand_id"
     t.string  "function"
     t.string  "img"
     t.text    "description"
     t.integer "price"
     t.integer "quantity"
+    t.index ["brand_id"], name: "index_chairs_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_chairs_on_category_id", using: :btree
   end
 
@@ -119,6 +135,8 @@ ActiveRecord::Schema.define(version: 20191209020627) do
 
   add_foreign_key "billings", "orders"
   add_foreign_key "billings", "users"
+  add_foreign_key "brands", "categories"
+  add_foreign_key "chairs", "brands"
   add_foreign_key "chairs", "categories"
   add_foreign_key "order_items", "chairs"
   add_foreign_key "order_items", "orders"

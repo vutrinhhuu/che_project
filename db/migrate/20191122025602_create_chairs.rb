@@ -3,6 +3,7 @@ class CreateChairs < ActiveRecord::Migration[5.0]
     create_table :chairs do |t|
       t.string :name
       t.references :category, foreign_key: true
+      t.references :brand, foreign_key: true
       t.string :function
       t.string :img
       t.text :description

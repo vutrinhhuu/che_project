@@ -33,10 +33,14 @@ class ChairsController < ApplicationController
         @url_current = request.original_url
         @order_item = current_order.order_items.new
         if current_user
-            @chair_history = RecommendHistory.new(user_id: current_user.id, chair_id: params[:id])
-            @chair_history.save
-            @histories = RecommendHistory.select('distinct(chair_id)').where("user_id = ? and chair_id != ?", current_user.id, params[:id])
-            @count = @histories.count
+            if RecommendHistory.where("chair_id = ?", params[:id]).count != 0
+                @chair_history = RecommendHistory.where("chair_id = ?", params[:id]).first
+                @chair_history.update updated_at: Time.now.utc
+            else
+                @chair_history = RecommendHistory.new(user_id: current_user.id, chair_id: params[:id])
+                @chair_history.save
+            end
+            @histories = current_user.recommend_histories.where("chair_id != ?", params[:id]).limit(4).order(updated_at: :desc)
         end 
     end
 end

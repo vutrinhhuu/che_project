@@ -32,5 +32,15 @@ class ChairsController < ApplicationController
         @list_other_chair = Chair.where("id!=?",params[:id]).limit(4).order(id: :desc)
         @url_current = request.original_url
         @order_item = current_order.order_items.new
+        if current_user
+            if RecommendHistory.where("chair_id = ?", params[:id]).count != 0
+                @chair_history = RecommendHistory.where("chair_id = ?", params[:id]).first
+                @chair_history.update updated_at: Time.now.utc
+            else
+                @chair_history = RecommendHistory.new(user_id: current_user.id, chair_id: params[:id])
+                @chair_history.save
+            end
+            @histories = current_user.recommend_histories.where("chair_id != ?", params[:id]).limit(4).order(updated_at: :desc)
+        end 
     end
 end

@@ -21,4 +21,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :billings, only: [:index, :show]
   end
+  
+  #rating
+  post 'rating', to: 'chairs#rating'
+  get 'rating', to: 'chairs#get_rating'
 end

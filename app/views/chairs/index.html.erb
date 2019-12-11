@@ -89,6 +89,7 @@
                                     <div class="single_product_text">
                                         <%=   link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible;'}%>
                                         <b class="text-danger">$<%= chair.price %></b>
+                                        <p id=""><%=chair.rating%><span class="glyphicon glyphicon-star star-avg" ></span></p>
                                         <% if chair.quantity  == 0 %>
                                             <h3 align="left" class="text-danger">SOLD OUT</h3>
                                         <%else%>

@@ -77,3 +77,8 @@ a {
 .mt-70 {
   margin-top: 70px
 }
+.star-avg {
+  color:orange; 
+  font-size:15px;
+  margin-left:5px;
+}

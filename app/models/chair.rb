@@ -7,6 +7,7 @@ class Chair < ApplicationRecord
 
   has_many :order_items
   belongs_to :category, optional: true
+  has_many :ratings
   mount_uploader :img, ImageUploader
 
   # default_scope { where(active: true) }

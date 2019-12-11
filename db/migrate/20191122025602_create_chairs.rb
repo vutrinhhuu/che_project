@@ -8,6 +8,7 @@ class CreateChairs < ActiveRecord::Migration[5.0]
       t.text :description
       t.integer :price
       t.integer :quantity
+      t.float :rating, :default => 0.0
     end
   end
 end

@@ -16,7 +16,7 @@
                     <div class="single_feature_post_text">
                         <p><%= category.description %></p>
                         <h3><%= category.name %></h3>
-                        <a href="<%= chairs_path(category: category.id) %>" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+                        <a href="<%= chairs_path(category: category.id) %>" class="feature_btn" method="GET">EXPLORE NOW <i class="fas fa-play"></i></a>
                         <%= image_tag category.img, width: '65%' %>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="col-lg-12">
             <div style = "text-align:center">
-                <%= link_to "See more", chairs_path, class: "genric-btn info-border circle e-large"%>
+                <%= link_to "See more", chairs_path, class: "genric-btn info-border circle e-large", method: :get %>
             </div>
         </div>
     </div>
@@ -179,7 +179,7 @@
             <div class="col-lg-12">
                 <% @brands.each do |brand| %>
                     <div class="single_client_logo">
-                        <%= link_to (image_tag brand.img, width: 125), chairs_path(brand: brand.id) %>
+                        <%= link_to (image_tag brand.img, width: 125), chairs_path(brand: brand.id), method: :get %>
                     </div>
                 <% end %>
             </div>

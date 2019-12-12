@@ -115,8 +115,8 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <%= link_to "Continue Shopping", chairs_path, class: 'btn_1' %>
-            <%= link_to "Proceed to Checkout", new_billing_path, class: 'btn_1 checkout_btn_1' %>
+            <%= link_to "Continue Shopping", chairs_path, class: 'btn_1', method: :get %>
+            <%= link_to "Proceed to Checkout", new_billing_path, class: 'btn_1 checkout_btn_1', method: :get %>
           </div>
         </div>
       </div>

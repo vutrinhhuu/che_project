@@ -47,15 +47,15 @@
               <%= @chair.description %>
             </p>
             <p class='h3'>
-              <b class="mr-3">Average rating</b> <span id="avg"><%=@chair.rating%></span><span class="glyphicon glyphicon-star star-avg" ></span>
+              <b class="mr-3">Average rating</b> <span id="avg"><%=@chair.rating%></span><span class="fa fa-star star-avg" ></span>
             </p>
             <div id="cate-rating" class="cate-rating">
               <div class="stars">
-            		<a id="star-1" class="star"><span class="glyphicon glyphicon-star"></span></a>
-            		<a id="star-2" class="star"><span class="glyphicon glyphicon-star"></span></a>
-            		<a id="star-3" class="star"><span class="glyphicon glyphicon-star"></span></a>
-            		<a id="star-4" class="star"><span class="glyphicon glyphicon-star"></span></a>
-            		<a id="star-5" class="star"><span class="glyphicon glyphicon-star"></span></a>
+            		<a id="star-1" class="star"><span class="fa fa-star"></span></a>
+            		<a id="star-2" class="star"><span class="fa fa-star"></span></a>
+            		<a id="star-3" class="star"><span class="fa fa-star"></span></a>
+            		<a id="star-4" class="star"><span class="fa fa-star"></span></a>
+            		<a id="star-5" class="star"><span class="fa fa-star"></span></a>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -112,7 +112,7 @@
                   <div class="single_product_text">
                     <%=   link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible'}%>
                     <h3><b style="color:red">$<%= chair.price %></b></h3>
-                    <p id=""><%=chair.rating%><span class="glyphicon glyphicon-star star-avg" ></span></p>
+                    <p id=""><%=chair.rating%><span class="fa fa-star star-avg" ></span></p>
                   </div>
                 </div>
             <% end %>
@@ -145,7 +145,7 @@
                                   <div class="single_product_text">
                                       <h4><%= link_to history.chair.name, chair_path(history.chair.id), {:style=>'opacity:1;color:black;visibility: visible'}%> </h4>
                                       <b class="text-danger">$<%= history.chair.price %></b>
-                                      <p id=""><%=history.chair.rating%><span class="glyphicon glyphicon-star star-avg" ></span></p>
+                                      <p id=""><%=history.chair.rating%><span class="fa fa-star star-avg" ></span></p>
                                   </div>
                               </div>
                           </div>

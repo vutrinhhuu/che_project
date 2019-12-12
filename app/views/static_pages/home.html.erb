@@ -47,7 +47,7 @@
                                         <div class="single_product_text">
                                             <h4><%= link_to chair.name, chair_path(chair.id), {:style=>'opacity:1;color:black;visibility: visible'}%> </h4>
                                             <b class="text-danger">$<%= chair.price %></b>
-                                            <p id=""><%=chair.rating%><span class="glyphicon glyphicon-star star-avg" ></span></p>
+                                            <p id=""><%=chair.rating%><span class="fa fa-star star-avg" ></span></p>
                                             <% if chair.quantity > 0 %>
                                                 <%= form_for @order_item, remote: true do |f| %>
                                                     <%= f.hidden_field :quantity, value: 1 %>

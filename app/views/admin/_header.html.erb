@@ -247,7 +247,7 @@
                   <%= link_to "My profile", users_path(), class: "btn btn-default btn-flat" %>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-flat" %>
                 </div>
               </li>
             </ul>

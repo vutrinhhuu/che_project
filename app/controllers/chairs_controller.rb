@@ -45,7 +45,11 @@ class ChairsController < ApplicationController
                 @chair_history.save
             end
             @histories = current_user.recommend_histories.where("chair_id != ?", params[:id]).limit(4).order(updated_at: :desc)
-        end 
+        else
+            @brand = @chair.brand
+            @chairs_brand = @brand.chairs.where("id != ?", params[:id]).limit(4).order(id: :desc)
+        end
+        
     end
     
     def rating
